@@ -13,6 +13,7 @@ async function* walk(dir) {
 }
 
 exports.run = async () => {
+    console.log('Running Cargo script')
     core.setOutput("version", "0.0.0");
     for await (const p of walk('.')) {
         console.log(p)
