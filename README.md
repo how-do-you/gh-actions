@@ -25,6 +25,7 @@ fields to be used by later workflow steps. More values are planned to be made av
 
 ```
 - name: Get Cargo variables
+  id: cargo
   uses: how-do-you/gh-actions@v0
   with:
     script: 'cargo'
