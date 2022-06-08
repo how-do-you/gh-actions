@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          repository: "https://github.com/how-do-you/gh-actions-test-cargo"
       - name: Run Cargo script
         id: cargo
         uses: how-do-you/gh-actions@v0
