@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Test Cargo script
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Run Cargo script
         id: cargo
         uses: how-do-you/gh-actions@v0
