@@ -1,13 +1,9 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: 'How do you...'
+description: 'A collection of utility actions'
 inputs:
-  who-to-greet: # id of input
-    description: 'Who to greet'
+  script:
+    description: 'Which script to run'
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
 runs:
   using: 'node16'
   main: 'dist/index.js'
