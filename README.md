@@ -1,21 +1,33 @@
-# Hello world javascript action
+# how-do-you/gh-actions
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This action is a collection of utility scripts, primarily meant to get values from files and make them available as
+outputs for later workflow steps.
 
 ## Inputs
 
-## `who-to-greet`
+### `script`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** The script to run. Possible values are:
 
-## Outputs
+- cargo
 
-## `time`
+## `cargo` script
 
-The time we greeted you.
+Tries to find a `Cargo.toml` file that contains a `package` section. It reads it and outputs the `version` and `name`
+fields to be used by later workflow steps. More values are planned to be made available.
 
-## Example usage
+### Outputs
 
-uses: actions/hello-world-javascript-action@v1.1
-with:
-who-to-greet: 'Mona the Octocat'
+- Cargo name: `${{steps.cargo.outputs.name}}`
+- Cargo version: `${{steps.cargo.outputs.version}}`
+
+### Example usage
+
+```
+- name: Get Cargo variables
+  uses: how-do-you/gh-actions@v0
+  with:
+    script: 'cargo'
+- name: Print Cargo version
+  run: echo "Version: ${{ steps.cargo.outputs.version }}"  
+```
