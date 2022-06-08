@@ -1,5 +1,9 @@
 name: 'How do you...'
+author: 'How do you...'
 description: 'A collection of utility actions'
+branding:
+  icon: 'box'
+  color: 'gray-dark'
 inputs:
   script:
     description: 'Which script to run'
