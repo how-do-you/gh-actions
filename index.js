@@ -1,5 +1,5 @@
 const core = require('@actions/core');
-const cargo = require('src/cargo');
+const cargo = require('./src/cargo');
 
 try {
     const script_to_run = core.getInput('script');

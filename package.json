@@ -1,13 +1,13 @@
 {
   "name": "gh-actions",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Github actions",
   "main": "dist/index.js",
   "repository": "https://github.com/how-do-you/gh-actions",
   "author": "How do you...",
   "license": "MIT",
   "scripts": {
-    "build": "ncc build index.js --license LICENSE"
+    "build": "ncc build index.js --license LICENSE --minify --no-cache"
   },
   "dependencies": {
     "@actions/core": "^1.8.2",
