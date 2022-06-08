@@ -3,14 +3,14 @@ on:
   push:
 
 jobs:
-  hello_world_job:
+  test_cargo:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Test Cargo script
     steps:
-      - name: Hello world action step
-        id: hello
+      - name: Run Cargo script
+        id: cargo
         uses: how-do-you/gh-actions@v0
         with:
-          who-to-greet: 'How do you...'
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+          script: 'cargo'
+      - name: Get version number output
+        run: echo "The version was ${{ steps.cargo.outputs.version }}"
